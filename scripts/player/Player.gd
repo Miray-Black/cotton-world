@@ -41,7 +41,7 @@ func _physics_process(delta):
 	# Простая анимация (заглушка)
 	update_animation(direction)
 
-func update_animation(direction: float):
+func update_animation(_direction: float):
 	# Здесь можно ставить анимации, но пока пропустим
 	pass
 
