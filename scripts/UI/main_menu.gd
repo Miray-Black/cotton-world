@@ -4,9 +4,14 @@ extends Control
 @export var first_level_path: String = "res://mane-test.tscn"
 
 func _on_new_game_pressed():
-	# Скрываем главное меню через UIManager (пока не создан, но создадим)
+	# Сброс глобальных переменных
+	Global.player_health = Global.player_max_health
+	Global.enemies_killed = 0
+	Global.desires_count = 0
+	Global.inventory.clear()
+	# ... и другие, если есть
+
 	UIManager.hide_main_menu()
-	# Загружаем первый уровень
 	get_tree().change_scene_to_file(first_level_path)
 
 func _on_load_pressed():
