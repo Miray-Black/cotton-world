@@ -24,5 +24,5 @@ func show_dialogue():
 	dialog.size = Vector2i(400, 200)
 	add_child(dialog)
 	dialog.popup_centered()
-	await dialog.popup_hide
+	await dialog.close_requested
 	dialog.queue_free()

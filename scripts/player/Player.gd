@@ -16,6 +16,7 @@ func _ready():
 	# Изначально выключаем мониторинг атаки
 	attack_area.monitoring = false
 
+
 func _physics_process(delta):
 	# Гравитация
 	if not is_on_floor():
@@ -49,6 +50,12 @@ func _input(event):
 	# Атака по нажатию клавиши (например, F)
 	if event.is_action_pressed("interact"):
 		perform_attack()
+	if event.is_action_pressed("pause - ?? - ??"):  # по умолчанию Esc
+		if not UIManager.pause_menu_instance:
+			UIManager.show_pause_menu()
+		else:
+			print("попытка снять паузу")
+			UIManager.hide_pause_menu()
 
 func perform_attack():
 	# Размещаем область атаки перед игроком
