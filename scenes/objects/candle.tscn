@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dxlrhvmy4wp4d"]
+
+[ext_resource type="Script" uid="uid://bn3jerga4ri0h" path="res://scripts/objects/candle.gd" id="1_t8pqx"]
+[ext_resource type="Texture2D" uid="uid://b2j52kye1etmh" path="res://assets/candel/C300-1.png" id="2_baloa"]
+[ext_resource type="Texture2D" uid="uid://l4l3eij4ifob" path="res://assets/candel/C300-2.png" id="3_58hbn"]
+[ext_resource type="Texture2D" uid="uid://yps6r3tqcaod" path="res://assets/candel/C300-3.png" id="4_m5utb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o77yw"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls8bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_baloa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_58hbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m5utb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Candle" type="Area2D" unique_id=279037471]
+collision_layer = 4
+script = ExtResource("1_t8pqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1473632074]
+shape = SubResource("CircleShape2D_o77yw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1140527330]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.042968754, 0.042968754)
+sprite_frames = SubResource("SpriteFrames_ls8bn")
+frame_progress = 0.17807971
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

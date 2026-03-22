@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://g1eoodfr8hyk"]
+
+[ext_resource type="PackedScene" uid="uid://cuf21k3dao1a0" path="res://scenes/lvls/lvl_1.tscn" id="1_22thb"]
+[ext_resource type="PackedScene" uid="uid://bdye6b4xn2eid" path="res://scenes/Player/player.tscn" id="2_lhcdr"]
+[ext_resource type="PackedScene" uid="uid://dxlrhvmy4wp4d" path="res://scenes/objects/candle.tscn" id="3_oqyax"]
+[ext_resource type="PackedScene" uid="uid://ym60ll2b11mn" path="res://scenes/npc/netral/npc_demo.tscn" id="4_lhcdr"]
+[ext_resource type="PackedScene" uid="uid://dgx7bplwyn12y" path="res://scenes/npc/enemies/enemy.tscn" id="5_oqyax"]
+[ext_resource type="PackedScene" uid="uid://dihfahnq57rxx" path="res://scenes/objects/Exit.tscn" id="6_1j1fo"]
+
+[node name="Node2D" type="Node2D" unique_id=1394716272]
+
+[node name="Lvl_1" parent="." unique_id=373596431 instance=ExtResource("1_22thb")]
+position = Vector2(338, 159)
+
+[node name="Player" parent="." unique_id=435692644 instance=ExtResource("2_lhcdr")]
+position = Vector2(407, 25)
+speed = 100.0
+
+[node name="Candle" parent="." unique_id=279037471 groups=["objects"] instance=ExtResource("3_oqyax")]
+position = Vector2(572, 210)
+
+[node name="NPC_demo" parent="." unique_id=2102946142 groups=["NPC"] instance=ExtResource("4_lhcdr")]
+position = Vector2(874, 242)
+
+[node name="Enemy" parent="." unique_id=1032323705 instance=ExtResource("5_oqyax")]
+position = Vector2(643, 214)
+
+[node name="Area2D" parent="." unique_id=1654267883 instance=ExtResource("6_1j1fo")]
+position = Vector2(957, 257)

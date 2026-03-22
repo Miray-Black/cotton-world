@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cumt7644bqgr"]
+
+[ext_resource type="Script" uid="uid://cwg550f2vmmsy" path="res://scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cw4vynr81fsde" path="res://scenes/UI/main_menu.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node2D" unique_id=6235195]
+script = ExtResource("1_ig7tw")
+
+[node name="MainMenu" parent="." unique_id=1658320170 instance=ExtResource("2_0xm2m")]
+offset_left = 574.0
+offset_top = 348.0
+offset_right = 574.0
+offset_bottom = 348.0
