@@ -22,9 +22,10 @@ func show_pause_menu():
 	if pause_menu_instance:
 		return
 	pause_menu_instance = pause_menu_scene.instantiate()
+	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS   # <-- добавить эту строку
 	get_tree().root.add_child(pause_menu_instance)
 	get_tree().paused = true
-	print("Пауза включена, меню создано")  # для отладки
+	print("Пауза включена, меню создано")
 
 func hide_pause_menu():
 	if pause_menu_instance:
