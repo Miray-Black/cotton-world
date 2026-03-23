@@ -1,8 +1,7 @@
 extends Control
 
 func _ready():
-	$VBoxContainer/ResumeButton.pressed.connect(_on_resume_pressed)
-	$VBoxContainer/MainMenuButton.pressed.connect(_on_main_menu_pressed)
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_resume_pressed():
 	UIManager.hide_pause_menu()
