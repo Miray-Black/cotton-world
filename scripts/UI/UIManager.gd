@@ -2,7 +2,7 @@ extends Node
 
 # Предзагружаем сцены
 var main_menu_scene: PackedScene = preload("res://scenes/ui/main_menu.tscn")
-var pause_menu_scene: PackedScene = preload("res://scenes/ui/PauseMenu.tscn")  # создадим позже
+var pause_menu_scene: PackedScene = preload("res://scenes/ui/PauseMenu.tscn")  # уже создано
 
 # Текущие экземпляры меню
 var current_menu: Control = null
