@@ -52,6 +52,7 @@ func _input(event):
 		perform_attack()
 	if event.is_action_pressed("pause - ?? - ??"):  # по умолчанию Esc
 		if not UIManager.pause_menu_instance:
+			print("попытка снять паузу")
 			UIManager.show_pause_menu()
 		else:
 			print("попытка снять паузу")
