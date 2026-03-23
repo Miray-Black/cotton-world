@@ -50,7 +50,7 @@ func _input(event):
 	# Атака по нажатию клавиши (например, F)
 	if event.is_action_pressed("interact"):
 		perform_attack()
-	if event.is_action_pressed("pause - ?? - ??"):  # по умолчанию Esc
+	if event.is_action_pressed("ui_cancel"):  # по умолчанию Esc
 		if not UIManager.pause_menu_instance:
 			print("попытка снять паузу")
 			UIManager.show_pause_menu()
