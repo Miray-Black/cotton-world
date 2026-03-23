@@ -4,7 +4,7 @@ var main_menu_scene: PackedScene = preload("res://scenes/ui/main_menu.tscn")
 var pause_menu_scene: PackedScene = preload("res://scenes/ui/PauseMenu.tscn")  # путь с большой буквы
 
 var current_menu: Control = null
-var pause_menu_instance: Control = null
+var pause_menu_instance: CanvasLayer = null
 
 func show_main_menu():
 	if current_menu:
