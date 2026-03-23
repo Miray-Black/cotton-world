@@ -1,7 +1,7 @@
 extends Node
 
-var main_menu_scene: PackedScene = preload("res://scenes/UI/main_menu.tscn")
-var pause_menu_scene: PackedScene = preload("res://scenes/UI/PauseMenu.tscn")  # путь с большой буквы
+var main_menu_scene: PackedScene = preload("res://scenes/ui/main_menu.tscn")
+var pause_menu_scene: PackedScene = preload("res://scenes/ui/PauseMenu.tscn")  # путь с большой буквы
 
 var current_menu: Control = null
 var pause_menu_instance: Control = null
@@ -21,8 +21,11 @@ func hide_main_menu():
 func show_pause_menu():
 	if pause_menu_instance:
 		return
+	if pause_menu_scene == null:
+		print("Ошибка: сцена паузы не загружена")
+		return
 	pause_menu_instance = pause_menu_scene.instantiate()
-	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS   # <-- добавить эту строку
+	pause_menu_instance.process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().root.add_child(pause_menu_instance)
 	get_tree().paused = true
 	print("Пауза включена, меню создано")
