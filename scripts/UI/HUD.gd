@@ -22,3 +22,9 @@ func update_kills():
 
 func update_desires():
 	desires_label.text = "Desires: %d" % Global.desires_count
+
+func show_hud():
+	show()
+
+func hide_hud():
+	hide()

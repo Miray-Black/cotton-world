@@ -1,7 +1,7 @@
 extends Node
 
-var main_menu_scene: PackedScene = preload("res://scenes/ui/main_menu.tscn")
-var pause_menu_scene: PackedScene = preload("res://scenes/UI/PauseMenu.tscn")  # путь с маленькой буквы
+var main_menu_scene: PackedScene = preload("res://scenes/UI/main_menu.tscn")
+var pause_menu_scene: PackedScene = preload("res://scenes/UI/PauseMenu.tscn")  # путь с большой буквы
 
 var current_menu: Control = null
 var pause_menu_instance: Control = null
