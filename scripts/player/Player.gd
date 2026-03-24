@@ -15,6 +15,7 @@ func _ready():
 	attack_area.area_entered.connect(_on_attack_area_entered)
 	# Изначально выключаем мониторинг атаки
 	attack_area.monitoring = false
+	update_attack_area_position()
 
 
 func _physics_process(delta):
@@ -28,6 +29,10 @@ func _physics_process(delta):
 		facing_direction = sign(direction)
 		sprite.flip_h = (facing_direction == -1)  # разворачиваем спрайт
 	velocity.x = direction * speed
+	if direction != 0:
+		facing_direction = sign(direction)
+		sprite.flip_h = (facing_direction == -1)
+		update_attack_area_position()   # <-- добавить
 	
 	# Приседание (замедление)
 	if Input.is_action_pressed("crouch"):
@@ -89,5 +94,8 @@ func take_damage(amount: int):
 
 func die():
 	print("Player died")
-	# Здесь можно перезапустить уровень или показать экран смерти
-	get_tree().reload_current_scene()  # временно
+	SceneManager.start_new_game()  # полный сброс и загрузка первого уровня
+
+func update_attack_area_position():
+	# Предполагаем, что attack_area изначально смещён вправо (position.x > 0)
+	attack_area.position.x = abs(attack_area.position.x) * facing_direction

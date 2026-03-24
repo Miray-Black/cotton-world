@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var health: int = 1
 @export var speed: float = 5.0  # нормальная скорость
 @export var damage: int = 1
+@export var gravity: int = 1200
 
 var player: Node2D = null
 
@@ -14,13 +15,14 @@ func _ready():
 	$Hurtbox.area_entered.connect(_on_hurtbox_area_entered)
 	$Hitbox.body_entered.connect(_on_hitbox_body_entered)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if player == null:
 		return  # если игрок умер или не найден
-	
-	# Простейшее движение к игроку
-	var direction = (player.global_position - global_position).normalized()
-	velocity = direction * speed
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	if player:
+		var direction = (player.global_position - global_position).normalized()
+		velocity.x = direction.x * speed
 	move_and_slide()
 
 func _on_hurtbox_area_entered(area: Area2D):

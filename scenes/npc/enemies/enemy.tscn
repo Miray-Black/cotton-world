@@ -150,6 +150,7 @@ size = Vector2(21, 18)
 [node name="Enemy" type="CharacterBody2D" unique_id=1032323705]
 collision_layer = 2
 script = ExtResource("1_y1rae")
+speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=458999306]
 position = Vector2(-2.3841858e-07, 2.3841858e-07)

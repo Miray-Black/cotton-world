@@ -131,7 +131,7 @@ custom_solver_bias = 0.12
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kbk7"]
-size = Vector2(70, 54)
+size = Vector2(18, 19)
 
 [node name="Player" type="CharacterBody2D" unique_id=435692644 groups=["player"]]
 collision_mask = 15
@@ -164,3 +164,11 @@ drag_right_margin = 0.05
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=788621458]
 shape = SubResource("RectangleShape2D_1kbk7")
+
+[node name="ColorRect" type="ColorRect" parent="AttackArea/CollisionShape2D" unique_id=435286839]
+offset_left = -11.0
+offset_top = -10.5
+offset_right = 11.0
+offset_bottom = 9.5
+color = Color(1, 1, 1, 0.4745098)
+metadata/_edit_use_anchors_ = true
