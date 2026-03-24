@@ -28,11 +28,10 @@ func _physics_process(delta):
 	if direction != 0:
 		facing_direction = sign(direction)
 		sprite.flip_h = (facing_direction == -1)  # разворачиваем спрайт
-	velocity.x = direction * speed
-	if direction != 0:
-		facing_direction = sign(direction)
-		sprite.flip_h = (facing_direction == -1)
 		update_attack_area_position()   # <-- добавить
+	velocity.x = direction * speed
+
+
 	
 	# Приседание (замедление)
 	if Input.is_action_pressed("crouch"):
