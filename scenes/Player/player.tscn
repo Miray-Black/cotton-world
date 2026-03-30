@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ipfkcfj080x3" path="res://scenes/Player/Player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dmcpc07ogxkpm" path="res://assets/Player.webp" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://cj2myrx48vfqv" path="res://scenes/Player/components/health_component.gd" id="3_gqjuk"]
+[ext_resource type="Script" uid="uid://cq513u4waks0i" path="res://scenes/Player/components/attack.gd" id="4_uiqp4"]
+[ext_resource type="Script" uid="uid://cybifowtjkdwd" path="res://scenes/Player/components/movement.gd" id="5_hvfru"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwnis"]
 atlas = ExtResource("2_btcbx")
@@ -137,9 +139,6 @@ size = Vector2(18, 19)
 [node name="Player" type="CharacterBody2D" unique_id=435692644 groups=["player"]]
 collision_mask = 15
 script = ExtResource("1_4ntmi")
-speed = null
-gravity = null
-jump_velocity = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=124289526]
 position = Vector2(-0.2500021, 0.2500007)
@@ -179,5 +178,11 @@ offset_bottom = 9.5
 color = Color(1, 1, 1, 0.4745098)
 metadata/_edit_use_anchors_ = true
 
-[node name="health_component" type="Node" parent="." unique_id=1487068169]
+[node name="HealthComponent" type="Node" parent="." unique_id=1487068169]
 script = ExtResource("3_gqjuk")
+
+[node name="AttackComponent" type="Node" parent="." unique_id=1541682645]
+script = ExtResource("4_uiqp4")
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1249299031]
+script = ExtResource("5_hvfru")

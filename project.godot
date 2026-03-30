@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cotton-world"
-run/main_scene="uid://cumt7644bqgr"
+run/main_scene="uid://c7vbab0nh3nnn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

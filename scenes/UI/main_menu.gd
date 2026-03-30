@@ -1,7 +1,7 @@
 extends Control
 
 # Экспортируем путь к первому уровню, чтобы можно было менять в инспекторе
-@export var first_level_path: String = "res://mane-test.tscn"
+@export var first_level_path: String = "res://scenes/lvls/mane-test.tscn"
 
 func _on_new_game_pressed():
 	# Сброс глобальных переменных
