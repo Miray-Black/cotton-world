@@ -25,9 +25,7 @@ func pick_up():
 	GameState.inventory.append(desire_name)
 	GameState.desires_count += 1
 	print("Подобрана свеча: ", desire_name)
-	var hud = get_tree().get_first_node_in_group("hud")
-	if hud:
-		hud.update_desires()
+	GameEvents.desire_collected.emit(desire_name)
 	# Блокируем повторный ввод
 	set_process_input(false)
 	# Создаём анимацию исчезновения

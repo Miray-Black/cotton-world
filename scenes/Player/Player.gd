@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var gravity : float = 1200.0
 @export var jump_velocity : float = -400.0
 
+@onready var health_component = $HealthComponent
 @onready var attack_area = $AttackArea
 @onready var sprite = $AnimatedSprite2D  # или AnimatedSprite2D
 
@@ -16,7 +17,7 @@ func _ready():
 	# Изначально выключаем мониторинг атаки
 	attack_area.monitoring = false
 	update_attack_area_position()
-
+	health_component.died.connect(_on_death)
 
 func _physics_process(delta):
 	# Гравитация
@@ -31,7 +32,8 @@ func _physics_process(delta):
 		update_attack_area_position()   # <-- добавить
 	velocity.x = direction * speed
 
-
+func _on_death()
+	die();
 	
 	# Приседание (замедление)
 	if Input.is_action_pressed("crouch"):
