@@ -7,21 +7,10 @@ extends CanvasLayer
 
 
 func _ready():
-	update_all()
-	# Добавляем HUD в группу для удобного поиска
-	add_to_group("hud")
+		# Добавляем HUD в группу для удобного поиска
 	GameEvents.desire_collected.connect(_on_desire_collected)
 	GameEvents.enemy_killed.connect(_on_enemy_killed)
 	GameEvents.player_took_damage.connect(_on_player_took_damage)
-	update_all()
-
-func update_all():
-	update_health()
-	update_kills()
-	update_desires()
-
-func update_health():
-	health_label.text = "HP: %d/%d" % [GameState.player_health, GameState.player_max_health]
 
 func update_kills():
 	kills_label.text = "Kills: %d" % GameState.enemies_killed
@@ -34,3 +23,12 @@ func show_hud():
 
 func hide_hud():
 	hide()
+
+func _on_desire_collected(_name):
+	update_desires()
+
+func _on_enemy_killed(_name):
+	update_kills()
+
+func _on_player_took_damage(_name):
+	update_desires()

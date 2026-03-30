@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ym60ll2b11mn"]
 
-[ext_resource type="Script" uid="uid://bdawj4lxuhlfe" path="res://scripts/npc/netral/NPC_demo.gd" id="1_x2lpt"]
+[ext_resource type="Script" uid="uid://bdawj4lxuhlfe" path="res://scenes/npc/netral/NPC_demo.gd" id="1_x2lpt"]
 [ext_resource type="Texture2D" uid="uid://djmkr41i26prd" path="res://assets/123.png" id="2_k8kdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4v5t"]
