@@ -17,9 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*uid://bfx848kc22grw"
+GameState="*uid://mm86b8usjxfi"
 UIManager="*uid://4jk1nawv7eqy"
 SceneManager="*uid://bf802f8dy3lfr"
+GameEvents="*uid://dwmjpc81n2wf8"
 
 [editor_plugins]
 

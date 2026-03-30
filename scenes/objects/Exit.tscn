@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dihfahnq57rxx"]
 
-[ext_resource type="Script" uid="uid://bqdl8a1i44e8o" path="res://scripts/objects/Exit.gd" id="1_f07mt"]
+[ext_resource type="Script" uid="uid://bqdl8a1i44e8o" path="res://scenes/objects/Exit.gd" id="1_f07mt"]
 [ext_resource type="Texture2D" uid="uid://dwxokvsoc7so0" path="res://assets/door.jpg" id="2_pkj15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcv1s"]

@@ -4,16 +4,10 @@ extends CanvasLayer
 @onready var kills_label = $MarginContainer/VBoxContainer/KillsLabel
 @onready var desires_label = $MarginContainer/VBoxContainer/DesiresLabel
 
-
-
 func _ready():
 	update_all()
 	# Добавляем HUD в группу для удобного поиска
 	add_to_group("hud")
-	GameEvents.desire_collected.connect(_on_desire_collected)
-	GameEvents.enemy_killed.connect(_on_enemy_killed)
-	GameEvents.player_took_damage.connect(_on_player_took_damage)
-	update_all()
 
 func update_all():
 	update_health()

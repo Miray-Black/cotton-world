@@ -5,10 +5,10 @@ extends Control
 
 func _on_new_game_pressed():
 	# Сброс глобальных переменных
-	Global.player_health = Global.player_max_health
-	Global.enemies_killed = 0
-	Global.desires_count = 0
-	Global.inventory.clear()
+	GameState.player_health = GameState.player_max_health
+	GameState.enemies_killed = 0
+	GameState.desires_count = 0
+	GameState.inventory.clear()
 	# ... и другие, если есть
 
 	UIManager.hide_main_menu()

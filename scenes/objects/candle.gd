@@ -22,8 +22,8 @@ func _input(event):
 		pick_up()
 
 func pick_up():
-	Global.inventory.append(desire_name)
-	Global.desires_count += 1
+	GameState.inventory.append(desire_name)
+	GameState.desires_count += 1
 	print("Подобрана свеча: ", desire_name)
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud:

@@ -36,7 +36,7 @@ func take_damage(amount: int):
 		die()
 
 func die():
-	Global.enemies_killed += 1
+	GameState.enemies_killed += 1
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud:
 		hud.update_kills()

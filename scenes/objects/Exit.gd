@@ -7,7 +7,7 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
-	if body.is_in_group("player") and Global.enemies_killed >= required_kills:
+	if body.is_in_group("player") and GameState.enemies_killed >= required_kills:
 		get_tree().change_scene_to_file(next_level_path)
 	else:
-		print("Not enough kills: ", Global.enemies_killed, "/", required_kills)
+		print("Not enough kills: ", GameState.enemies_killed, "/", required_kills)

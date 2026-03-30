@@ -18,19 +18,19 @@ func load_scene(path: String, use_loading_screen: bool = false):
 		get_tree().current_scene.add_child(hud)
 
 func go_to_main_menu():
-	Global.inventory.clear()
-	Global.desires_count = 0
-	Global.enemies_killed = 0
-	Global.player_health = Global.player_max_health
+	GameState.inventory.clear()
+	GameState.desires_count = 0
+	GameState.enemies_killed = 0
+	GameState.player_health = GameState.player_max_health
 	load_scene(MAIN_MENU_PATH)
 
 func start_new_game():
-	Global.inventory.clear()
-	Global.desires_count = 0
-	Global.enemies_killed = 0
-	Global.player_health = Global.player_max_health
+	GameState.inventory.clear()
+	GameState.desires_count = 0
+	GameState.enemies_killed = 0
+	GameState.player_health = GameState.player_max_health
 	load_scene(FIRST_LEVEL_PATH)
 
 func continue_game():
-	var saved_level = Global.get_saved_level()  # нужно реализовать
+	var saved_level = GameState.get_saved_level()  # нужно реализовать
 	load_scene(saved_level)
